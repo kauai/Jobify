@@ -1,0 +1,25 @@
+   <%- include('cabecalho') %>
+        <div class="container list-container">
+             
+              <ul style="color:#606060;flex-direction:column;justify-content:">
+                      <li style="
+                        color:#fff;
+                        margin-bottom:10px;
+                        padding:10px;
+                        display:flex;
+                        justify-content: space-between;
+                        background:#e56536;
+                      "><a href="/admin/vaga/nova">Nova Vaga</a></li>
+                     <% vagas.forEach(item => { %>
+                    <li style="
+                        color:#fff;
+                        margin-bottom:10px;
+                        padding:10px;
+                        display:flex;
+                        justify-content: space-between;
+                        background:#606060;
+                    " href="vaga/<%- item.id %>"><%- item.title %><a href="/admin/vagas/delete/<%- item.id %>">Excluir</a></li>
+                  <% }) %>
+              </ul>
+        </div>
+    <%- include('footer') %>

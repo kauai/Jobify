@@ -1,0 +1,19 @@
+   <%- include('cabecalho') %>
+        <div class="container list-container">
+          <div class="form-vaga">
+            <h1>Nova Vaga</h1>
+             <form method="post">
+               <label>Titulo</label><br>
+               <input name="title"><br>
+               <label>Descriaçao</label><br>
+               <textarea name="desc"></textarea><br>
+               <select name="categoria">
+                  <% vagas.forEach(item => { %>
+                     <option value="<%- item.categoria %>"><%- item.title %></option>
+                  <% })%>
+               </select><br>
+               <button type="submit">Salvar vaga</button>
+             </form>
+          </div>
+        </div>
+    <%- include('footer') %>
