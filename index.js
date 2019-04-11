@@ -29,11 +29,14 @@ app.get('/',async (req,res) => {
     })
 
      res.render('home',{ categorias })
-     console.log(categorias)
+     //console.log(categorias)
 })
 
-app.get('/vaga',(req,res) => {
-    res.render('vaga',{name:"thiago"})
+app.get('/vaga/:id',async (req,res) => {
+    const db = await dbConnection
+    const vaga = await db.get(`SELECT * FROM vagas WHERE id = ${req.params.id}`)
+    res.render('vaga',{ vaga })
+    console.log(vaga)
 })
 
 app.listen(3001,(e) => {
