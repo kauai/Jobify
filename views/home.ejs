@@ -5,54 +5,16 @@
         <h2 class="second-title">Open Rules</h2>
       </div>
       <div class="container list-container">
+        <% categorias.forEach(item => { %>
           <article>
-            <h3>Enginering Team</h3>
-            <ul>
-               <li><a href="vaga">Fullstack Developer (remote)</a></li>
-            </ul>
-          </article>
-          <article>
-            <h3>Marketing Team</h3>
-            <ul>
-               <li><a href="vaga">Fullstack Developer (remote)</a></li>
-            </ul>
-          </article>
-          <article>
-            <h3>Developer Team</h3>
-            <ul>
-               <li><a href="vaga">Devops (remote)</a></li>
-            </ul>
-          </article>
-          <article>
-            <h3>Developer Team</h3>
-            <ul>
-               <li>Devops (remote)</a></li>
-            </ul>
-          </article>
-          <article>
-            <h3>Developer Team</h3>
-            <ul>
-               <li><a href="vaga">Devops (remote)</a></li>
-            </ul>
-          </article>
-          <article>
-            <h3>Developer Team</h3>
-            <ul>
-               <li><a href="vaga">Devops (remote)</a></li>
-            </ul>
-          </article>
-          <article>
-            <h3>Developer Team</h3>
-            <ul>
-               <li><a href="vaga">Devops (remote)</a></li>
-            </ul>
-          </article>
-           <article>
-            <h3>Developer Team</h3>
-            <ul>
-               <li><a href="vaga">Devops (remote)</a></li>
-            </ul>
-          </article>
+              <h3><%- item.categoria %></h3>
+              <ul>
+                 <% item.vagas.forEach(item => { %>
+                    <li><a href="vaga/<%- item.id %>">Fullstack Developer (remote)</a></li>
+                  <% }) %>
+              </ul>
+            </article>
+        <% }) %>
       </div>
     </section>
 
