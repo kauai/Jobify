@@ -4,6 +4,7 @@ const app = express()
 const path = require('path')
 
 const dbConnection = sqlite.open(path.resolve(__dirname,'banco.sqlite'),{ Promise })
+const port = process.env.PORT || 3001
 
 const init = async () => {
     const db = await dbConnection
@@ -113,7 +114,7 @@ app.post('/admin/categoria/nova',async (req,res) => {
 
 
 
-app.listen(3001,(e) => {
+app.listen(port,(e) => {
     if(e) throw('Erro de conexao')
     console.log('servidor rodando na porta 3001')
 })
