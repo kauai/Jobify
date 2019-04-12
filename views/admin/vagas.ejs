@@ -18,7 +18,12 @@
                         display:flex;
                         justify-content: space-between;
                         background:#606060;
-                    " href="vaga/<%- item.id %>"><%- item.title %><a href="/admin/vagas/delete/<%- item.id %>">Excluir</a></li>
+                    " href="vaga/<%- item.id %>"><%- item.title %>
+                    <span>
+                      <a href="/admin/vagas/update/<%- item.id %>">Atualizar</a>
+                      <a href="/admin/vagas/delete/<%- item.id %>">Excluir</a>
+                    </span>
+                    </li>
                   <% }) %>
               </ul>
         </div>

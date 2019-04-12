@@ -76,6 +76,22 @@ app.get('/admin/vaga/nova',async (req,res) => {
     res.render('admin/nova-vaga',{ categorias })
 })
 
+app.get('/admin/vagas/update/:id',async (req,res) => {
+    const db = await dbConnection
+    const categorias = await db.all(`SELECT * FROM categorias`)
+    const vaga = await db.all(`SELECT * FROM vagas WHERE id = ${req.params.id}`)
+    res.render('admin/vaga-update',{ vaga,categorias })
+})
+
+
+app.post('/admin/vagas/update/:id',async (req,res) => {
+    const { categoria, title, desc } = req.body
+    const db = await dbConnection
+    await db.run(`update vagas SET categoria='${categoria}',title='${title}',desc='${desc}' WHERE id = ${req.params.id}`)
+    res.redirect('/admin/vagas')
+})
+
+
 app.get('/admin/categoria/nova',async (req,res) => {
     res.render('admin/nova-categoria')
 })
