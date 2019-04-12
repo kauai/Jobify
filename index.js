@@ -72,9 +72,8 @@ app.get('/admin/categorias/delete/:id',async (req,res) => {
 app.get('/admin/vaga/nova',async (req,res) => {
     
     const db = await dbConnection
-    const vagas = await db.all(`SELECT * FROM vagas`)
-    console.log(vagas)
-    res.render('admin/nova-vaga',{ vagas })
+    const categorias = await db.all(`SELECT * FROM categorias`)
+    res.render('admin/nova-vaga',{ categorias })
 })
 
 app.get('/admin/categoria/nova',async (req,res) => {

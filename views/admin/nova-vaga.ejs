@@ -8,8 +8,8 @@
                <label>Descriaçao</label><br>
                <textarea name="desc"></textarea><br>
                <select name="categoria">
-                  <% vagas.forEach(item => { %>
-                     <option value="<%- item.categoria %>"><%- item.title %></option>
+                  <% categorias.forEach(item => { %>
+                     <option  value="<%- item.id %>"><%- item.categoria %></option>
                   <% })%>
                </select><br>
                <button type="submit">Salvar vaga</button>
