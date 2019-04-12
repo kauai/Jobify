@@ -1,8 +1,9 @@
 const express = require('express')
 const sqlite = require('sqlite')
 const app = express()
+const path = require('path')
 
-const dbConnection = sqlite.open('banco.sqlite',{ Promise })
+const dbConnection = sqlite.open(path.resolve(__dirname,'banco.sqlite'),{ Promise })
 
 const init = async () => {
     const db = await dbConnection
