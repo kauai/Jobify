@@ -76,6 +76,8 @@ ul li a{
     font-size: 35px;
     padding: 10px;
     cursor:pointer;
+    position: relative;
+    z-index:999;
 }
 
 .second-content{
@@ -119,3 +121,15 @@ article ul li a {
     color:#606060;
 }
 
+.overlay{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    background: url(http://www.picuruta.com.br/templates/noo_jarvis/images/pattern.png);
+    left: 0;
+    height: 100%;
+}
+
+.first-main{
+    position:relative;
+}
