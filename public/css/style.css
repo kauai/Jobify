@@ -125,7 +125,7 @@ article ul li a {
     position: absolute;
     width: 100%;
     top: 0;
-    background: url(http://www.picuruta.com.br/templates/noo_jarvis/images/pattern.png);
+    background: url('../images/pattern.png');
     left: 0;
     height: 100%;
 }
