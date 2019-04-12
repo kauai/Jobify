@@ -6,6 +6,15 @@ const path = require('path')
 const dbConnection = sqlite.open(path.resolve(__dirname,'banco.sqlite'),{ Promise })
 const port = process.env.PORT || 3001
 
+//protegendo dominio
+// app.use('/admin',(req,res,next) => {
+//     if(req.hostname == 'localhos'){
+//         next()
+//     }else{
+//         res.send("<h2>Not allowed</h2>")
+//     }
+// })
+
 const init = async () => {
     const db = await dbConnection
     await db.run('CREATE TABLE IF NOT EXISTS categorias ( id INTEGER PRIMARY KEY,categoria TEXT)')
