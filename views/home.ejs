@@ -8,9 +8,9 @@
         <% categorias.forEach(item => { %>
           <article>
               <h3><%- item.categoria %></h3>
-              <ul>
-                 <% item.vagas.forEach(item => { %>
-                    <li><a href="vaga/<%- item.id %>"><%- item.title %></a></li>
+              <ul class="list-vaga">
+                 <% item.vagas.forEach((item,key) => { %>
+                    <li><b><%- key+1 %></b>-<a href="vaga/<%- item.id %>"><%- item.title %></a></li>
                   <% }) %>
               </ul>
             </article>
